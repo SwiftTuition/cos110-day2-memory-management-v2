@@ -123,12 +123,17 @@ The Gemini CLI **tool gets installed automatically**, but you need to **authenti
 1. Go back to repository main page
 2. Click green "**Code**" button → "**Codespaces**" tab
 3. Click "**Create codespace on main**"
-4. **Wait 2-3 minutes** for setup (tools install automatically)
+4. **Wait 2-3 minutes** for setup (tools + Gemini extension install automatically)
 
 **Step 4: Authenticate CLI**
 1. Once Codespace loads, open **Terminal** (bottom panel)
 2. Type: `gemini auth $GEMINI_API_KEY`
 3. Press Enter
+4. **A URL will appear** - click on it (or copy-paste into new browser tab)
+5. **Sign in with your Google account** and authorize the application
+6. **Copy the authorization code** from the browser
+7. **Paste the code** into the terminal and press Enter
+8. You should see: `Loaded cached credentials. Got it. I'm ready.`
 
 **Step 5: Test It Works**
 ```bash
@@ -170,6 +175,11 @@ cd cos110-day2-memory-management
 # Replace YOUR_API_KEY_HERE with your actual API key
 gemini auth YOUR_API_KEY_HERE
 ```
+**Note**: You'll be prompted to:
+1. Visit a Google authorization URL in your browser
+2. Sign in and authorize the application
+3. Copy the authorization code back to terminal
+4. Success message: `Loaded cached credentials. Got it. I'm ready.`
 
 **Step 5: Test Everything**
 ```bash
@@ -184,7 +194,12 @@ gemini prompt "What is a memory leak in C++?"
 
 **"Command not found: gemini"**
 - In Codespaces: Wait for setup to finish completely
+- If still fails: Install "Gemini CLI Companion" extension from VS Code marketplace
 - Locally: Run `npm install -g @google/gemini-cli`
+
+**"No installer available for GitHub Codespaces"**
+- The Gemini CLI Companion extension should auto-install
+- If not: Go to Extensions panel → Search "Gemini CLI Companion" → Install
 
 **"Authentication failed"**
 - Double-check your API key at [Google AI Studio](https://makersuite.google.com/app/apikey)
